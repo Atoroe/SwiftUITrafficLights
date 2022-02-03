@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E30C3A0727AC0A49001D6EEB /* ChangeColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30C3A0627AC0A49001D6EEB /* ChangeColorButton.swift */; };
 		E3175CBB27AA865300EEB4F9 /* TrafficLightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3175CBA27AA865300EEB4F9 /* TrafficLightsApp.swift */; };
 		E3175CBD27AA865300EEB4F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3175CBC27AA865300EEB4F9 /* ContentView.swift */; };
 		E3175CBF27AA865700EEB4F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3175CBE27AA865700EEB4F9 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E30C3A0627AC0A49001D6EEB /* ChangeColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorButton.swift; sourceTree = "<group>"; };
 		E3175CB727AA865300EEB4F9 /* TrafficLights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3175CBA27AA865300EEB4F9 /* TrafficLightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightsApp.swift; sourceTree = "<group>"; };
 		E3175CBC27AA865300EEB4F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				E3175CBE27AA865700EEB4F9 /* Assets.xcassets */,
 				E3175CC027AA865700EEB4F9 /* Preview Content */,
 				E3175CC827AA868300EEB4F9 /* ColorCircle.swift */,
+				E30C3A0627AC0A49001D6EEB /* ChangeColorButton.swift */,
 			);
 			path = TrafficLights;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				E3175CBD27AA865300EEB4F9 /* ContentView.swift in Sources */,
 				E3175CBB27AA865300EEB4F9 /* TrafficLightsApp.swift in Sources */,
 				E3175CC927AA868300EEB4F9 /* ColorCircle.swift in Sources */,
+				E30C3A0727AC0A49001D6EEB /* ChangeColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

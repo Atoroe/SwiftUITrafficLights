@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case clear, red, yellow, green
+}
+
 struct ContentView: View {
-    @State private var isRedLightOn = false
-    @State private var isYellowLightOn = false
-    @State private var isGreenLightOn = false
+    @State private var currentLight = CurrentLight.clear
+    
     @State private var buttonText = "START"
     
     var body: some View {
@@ -20,9 +23,11 @@ struct ContentView: View {
             VStack{
                 trafficLights
                 Spacer()
-                Button(action: { changeStatus()}) {
-                    Text(buttonText)
-                        .font(.largeTitle)
+                ChangeColorButton(title: buttonText) {
+                    if currentLight != .clear {
+                        buttonText = "NEXT"
+                    }
+                    nextColor()
                 }
             }
             .padding()
@@ -31,25 +36,24 @@ struct ContentView: View {
     
     private var trafficLights: some View {
         VStack {
-            ColorCircle(isOn: isRedLightOn, lightColor: .red)
-            ColorCircle(isOn: isYellowLightOn, lightColor: .yellow)
-            ColorCircle(isOn: isGreenLightOn, lightColor: .green)
+            ColorCircle(color: .red,
+                        lightColor: currentLight == .red ? Color.red : Color.clear,
+                        opacity: currentLight == .red ? 1 : 0.5)
+            ColorCircle(color: .yellow,
+                        lightColor: currentLight == .yellow ? Color.yellow : Color.clear,
+                        opacity: currentLight == .yellow ? 1 : 0.5)
+            ColorCircle(color: .green,
+                        lightColor: currentLight == .green ? Color.green : Color.clear,
+                        opacity: currentLight == .green ? 1 : 0.5)
         }
     }
     
-    private func changeStatus() {
-        if !isRedLightOn && !isYellowLightOn && !isGreenLightOn {
-            isRedLightOn.toggle()
-            buttonText = "NEXT"
-        } else if isRedLightOn {
-            isRedLightOn.toggle()
-            isYellowLightOn.toggle()
-        } else if isYellowLightOn {
-            isYellowLightOn.toggle()
-            isGreenLightOn.toggle()
-        } else {
-            isGreenLightOn.toggle()
-            isRedLightOn.toggle()
+    private func nextColor() {
+        switch currentLight {
+        case .clear: currentLight = .red
+        case .red: currentLight = .yellow
+        case .yellow: currentLight = .green
+        case .green: currentLight = .red
         }
     }
 }
